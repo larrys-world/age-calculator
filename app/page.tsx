@@ -1,4 +1,5 @@
 import AgeCalculator from '@/components/AgeCalculator'
+import AdSense from '@/components/AdSense'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -34,7 +35,17 @@ export default function Home() {
           </div>
         </header>
 
+        {/* Top Ad */}
+        <div className="mb-8 flex justify-center">
+          <AdSense slot="top-banner" format="horizontal" />
+        </div>
+
         <AgeCalculator />
+
+        {/* Middle Ad */}
+        <div className="my-8 flex justify-center">
+          <AdSense slot="mid-content" format="rectangle" />
+        </div>
 
         <section className="mt-16 prose prose-gray max-w-none">
           <h2 className="text-2xl font-bold text-gray-900 mb-4">
@@ -49,59 +60,54 @@ export default function Home() {
           <h3 className="text-xl font-semibold text-gray-900 mb-3 mt-6">
             What This Calculator Shows
           </h3>
-          <ul className="text-gray-600 space-y-2">
+          <ul className="list-disc list-inside text-gray-600 space-y-2 mb-6">
             <li>Your exact age in years, months, and days</li>
             <li>Total days, hours, and minutes you've lived</li>
-            <li>Countdown to your next birthday</li>
-            <li>Your zodiac sign and Chinese zodiac</li>
-            <li>Interesting life statistics (heartbeats, breaths, etc.)</li>
-            <li>Notable events from your birth year</li>
+            <li>Days until your next birthday</li>
+            <li>Your astrological sign</li>
+            <li>Life milestones and statistics</li>
+            <li>Your age on other planets</li>
           </ul>
 
           <h3 className="text-xl font-semibold text-gray-900 mb-3 mt-6">
-            Age Milestones
+            How Age Calculation Works
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-gray-600">
-            <div>
-              <h4 className="font-semibold mb-2">Legal Milestones</h4>
-              <ul className="space-y-1 text-sm">
-                <li>16 years - Driving age in many countries</li>
-                <li>18 years - Legal adult in most countries</li>
-                <li>21 years - Legal drinking age (US)</li>
-                <li>25 years - Car rental without surcharge</li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-2">Life Milestones</h4>
-              <ul className="space-y-1 text-sm">
-                <li>30 years - Often considered "real adulthood"</li>
-                <li>40 years - "Over the hill" celebrations</li>
-                <li>50 years - Half century mark</li>
-                <li>65 years - Traditional retirement age</li>
-              </ul>
-            </div>
-          </div>
+          <p className="text-gray-600 mb-4">
+            Age calculation involves determining the difference between your birth date and 
+            the current date. Our calculator accounts for leap years and varying month lengths 
+            to provide accurate results. The calculation considers:
+          </p>
+          <ul className="list-disc list-inside text-gray-600 space-y-2 mb-6">
+            <li>Leap years (366 days instead of 365)</li>
+            <li>Different month lengths (28-31 days)</li>
+            <li>Time zones (using your local time)</li>
+            <li>Exact time if provided</li>
+          </ul>
 
-          <div className="mt-8 p-6 bg-green-50 rounded-lg">
-            <h3 className="text-xl font-semibold text-gray-900 mb-3">
-              Birthday Gift Ideas by Age
-            </h3>
-            <p className="text-gray-600 mb-4">
-              Looking for the perfect birthday gift? Here are some popular ideas by age group:
-            </p>
-            <ul className="space-y-2 text-gray-600">
-              <li><strong>Kids (0-12):</strong> Educational toys, books, games, sports equipment</li>
-              <li><strong>Teens (13-19):</strong> Tech gadgets, gift cards, experiences, fashion items</li>
-              <li><strong>Young Adults (20-35):</strong> Travel accessories, home decor, subscriptions, fitness gear</li>
-              <li><strong>Adults (36-60):</strong> Hobby supplies, wine/spirits, spa treatments, smart home devices</li>
-              <li><strong>Seniors (60+):</strong> Photo albums, comfortable clothing, health devices, experiences</li>
-            </ul>
+          <h3 className="text-xl font-semibold text-gray-900 mb-3 mt-6">
+            Frequently Asked Questions
+          </h3>
+          <div className="space-y-4 text-gray-600">
+            <div>
+              <p className="font-semibold">How accurate is this age calculator?</p>
+              <p>Our calculator is extremely accurate, calculating your age down to the exact day. 
+              If you provide your birth time, it can calculate down to the minute.</p>
+            </div>
+            <div>
+              <p className="font-semibold">Does it account for leap years?</p>
+              <p>Yes, the calculator properly accounts for all leap years in its calculations.</p>
+            </div>
+            <div>
+              <p className="font-semibold">Can I calculate someone else's age?</p>
+              <p>Absolutely! You can calculate anyone's age by entering their birth date.</p>
+            </div>
           </div>
         </section>
 
-        <footer className="mt-16 pt-8 border-t border-gray-200 text-center text-sm text-gray-500">
-          <p>© 2026 Age Calculator. All calculations are performed in your browser.</p>
-        </footer>
+        {/* Bottom Ad */}
+        <div className="mt-8 mb-4 flex justify-center">
+          <AdSense slot="bottom-content" format="rectangle" />
+        </div>
       </div>
     </main>
   )
