@@ -1,6 +1,7 @@
 import AgeCalculator from '@/components/AgeCalculator'
 import AdSense from '@/components/AdSense'
 import type { Metadata } from 'next'
+import RelatedTools from './RelatedTools'
 
 export const metadata: Metadata = {
   title: 'Age Calculator - Calculate Your Exact Age',
@@ -41,6 +42,11 @@ export default function Home() {
         </div>
 
         <AgeCalculator />
+
+        {/* Related Tools */}
+        <div className="max-w-4xl mx-auto my-8">
+          <RelatedTools currentTool="age-calculator" />
+        </div>
 
         {/* Middle Ad */}
         <div className="my-8 flex justify-center">
